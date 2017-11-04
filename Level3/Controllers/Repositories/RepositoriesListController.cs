@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace restlevel3aspnetcore.Controllers.Repositories
 {
     [Route("repositories")]
-    public class RepositoriesListController : Controller
+    public class RepositoriesListController : ControllerBase
     {
         [HttpGet]
         public IActionResult Get()
