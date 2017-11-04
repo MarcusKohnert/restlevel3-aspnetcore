@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "restlevel3-aspnetcore", "Level3\restlevel3-aspnetcore.csproj", "{000249E3-5914-4D5A-B32C-8B6DE8E2AC7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Level3", "Level3", "{E1B9BFDF-F838-4E2C-9F37-0FE40C7655B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{000249E3-5914-4D5A-B32C-8B6DE8E2AC7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{000249E3-5914-4D5A-B32C-8B6DE8E2AC7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{000249E3-5914-4D5A-B32C-8B6DE8E2AC7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{000249E3-5914-4D5A-B32C-8B6DE8E2AC7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{000249E3-5914-4D5A-B32C-8B6DE8E2AC7D} = {E1B9BFDF-F838-4E2C-9F37-0FE40C7655B4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69A8299F-6644-4B0F-82FF-2D97EC1A87D1}
+	EndGlobalSection
+EndGlobal
