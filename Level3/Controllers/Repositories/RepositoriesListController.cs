@@ -1,6 +1,8 @@
 ﻿using Halcyon.HAL;
 using Halcyon.Web.HAL;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace restlevel3aspnetcore.Controllers.Repositories
 {
@@ -14,39 +16,31 @@ namespace restlevel3aspnetcore.Controllers.Repositories
                 new HALResponse(
                     new RepositoryListRepresentation
                     {
-                        List = new []
-                        {
-                            new HALResponse(
-                                new RepositoryListItemRepresentation
-                                {
-                                    Id   = 1,
-                                    Name = "Repo 1"
-                                }).AddLinks(
-                                    new Link(Link.RelForSelf, "/repositories/1", "Repo 1")
-                                ),
-                            new HALResponse(
-                                new RepositoryListItemRepresentation
-                                {
-                                    Id   = 2,
-                                    Name = "Repo 2"
-                                }).AddLinks(
-                                new Link(
-                                    Link.RelForSelf, "/repositories/2", "Repo 2")
-                                ),
-                            new HALResponse(
-                                new RepositoryListItemRepresentation
-                                {
-                                    Id   = 3,
-                                    Name = "Repo 3"
-                                }).AddLinks(
-                                    new Link(Link.RelForSelf, "/repositories/3", "Repo 3")
-                                )
-                        }
+                        List = 
+                            Enumerable
+                            .Range(1, 3)
+                            .Select(_ =>
+                                new HALResponse(
+                                    new RepositoryListItemRepresentation
+                                    {
+                                        Id   = _,
+                                        Name = $"Repo {_}"
+                                    }).AddLinks(
+                                    new Link(
+                                        Link.RelForSelf, $"/repositories/{_}", $"Repo {_}")
+                                    )
+                            )
+                            .ToArray()
                     }
-                ).AddLinks(
-                    new Link(Link.RelForSelf, "/repositories", "Repositories")
-                )
+                ).AddLinks(this.GetLinks())
             );
+        }
+
+        private IEnumerable<Link> GetLinks()
+        {
+            yield return new Link(Link.RelForSelf, "/repositories", "Repositories");
+
+            yield return new Link("repository-creation", "/repositories", "New Repository", "POST");
         }
     }
 }

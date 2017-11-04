@@ -20,7 +20,7 @@ namespace restlevel3aspnetcore.Controllers.Repositories
                         Languages    = new [] { "C#, PowerShell, F#" }
                     }
                 ).AddLinks(
-                    new Link(Link.RelForSelf, "/repositories", "Repositories")
+                    new Link(Link.RelForSelf, $"/repositories/{id}")
                 )
             );
         }

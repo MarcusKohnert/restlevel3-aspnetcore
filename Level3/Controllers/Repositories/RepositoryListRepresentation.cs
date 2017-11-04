@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Halcyon.HAL;
+﻿using Halcyon.HAL;
+using System;
 
 namespace restlevel3aspnetcore.Controllers.Repositories
 {
@@ -8,11 +7,11 @@ namespace restlevel3aspnetcore.Controllers.Repositories
     {
         public RepositoryListRepresentation()
         {
-            this.List = Enumerable.Empty<HALResponse>();
+            this.List = Array.Empty<HALResponse>();
         }
 
-        public int Total => this.List.Count();
+        public int Total => this.List.Length;
 
-        public IEnumerable<HALResponse> List { get; set; }
+        public HALResponse[] List { get; set; }
     }
 }
