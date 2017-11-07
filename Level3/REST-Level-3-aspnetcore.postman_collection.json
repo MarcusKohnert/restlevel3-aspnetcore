@@ -167,8 +167,99 @@
 		{
 			"name": "/repositories/1",
 			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Neues Repo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:64151/repositories/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64151",
+					"path": [
+						"repositories",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/repositories/1 Admin",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Admin"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Neues Repo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:64151/repositories/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64151",
+					"path": [
+						"repositories",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/repositories/1",
+			"request": {
 				"method": "DELETE",
 				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:64151/repositories/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64151",
+					"path": [
+						"repositories",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/repositories/1 Admin",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Admin"
+					}
+				],
 				"body": {},
 				"url": {
 					"raw": "http://localhost:64151/repositories/1",
