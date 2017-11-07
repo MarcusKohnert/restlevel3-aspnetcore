@@ -1,0 +1,190 @@
+{
+	"info": {
+		"name": "REST-Level-3-aspnetcore",
+		"_postman_id": "31935439-231f-4d2b-5c84-6f3dac430144",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "root",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:64151",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64151"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/repositories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:64151/repositories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64151",
+					"path": [
+						"repositories"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/repositories",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\tname: \"Repo 3\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:64151/repositories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64151",
+					"path": [
+						"repositories"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/repositories/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:64151/repositories/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64151",
+					"path": [
+						"repositories",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/repositories/1 Admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Admin"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:64151/repositories/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64151",
+					"path": [
+						"repositories",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/repositories/1 Contributor",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Contributor"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:64151/repositories/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64151",
+					"path": [
+						"repositories",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/repositories/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:64151/repositories/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64151",
+					"path": [
+						"repositories",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
