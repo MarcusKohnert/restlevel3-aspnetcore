@@ -1,7 +1,9 @@
 ﻿using Halcyon.HAL;
 using Halcyon.Web.HAL;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace restlevel3aspnetcore.Controllers.Repositories
 {
@@ -30,9 +32,18 @@ namespace restlevel3aspnetcore.Controllers.Repositories
 
             yield return new Link("repository-contributors", $"/repositories/{id}/contributors");
 
-            yield return new Link("repository-edit", $"/repositories/{id}", "Edit", "PUT");
+            var authorizationHeader = this.Request.Headers["Authorization"];
 
-            yield return new Link("repository-deletion", $"/repositories/{id}", "Delete", "DELETE");
+            if (authorizationHeader.Any(_ => _.Equals("Contributor", StringComparison.OrdinalIgnoreCase) ||
+                                             _.Equals("Admin", StringComparison.OrdinalIgnoreCase)))
+            {
+                yield return new Link("repository-edit", $"/repositories/{id}", "Edit", "PUT");
+            }
+
+            if (authorizationHeader.Any(_ => _.Equals("Admin", StringComparison.OrdinalIgnoreCase)))
+            {
+                yield return new Link("repository-deletion", $"/repositories/{id}", "Delete", "DELETE");
+            }
         }
     }
 }
