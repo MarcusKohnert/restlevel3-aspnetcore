@@ -8,6 +8,19 @@
 	"item": [
 		{
 			"name": "root",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
+							"tests[\"Content-Type is application/hal+json\"] = postman.getResponseHeader(\"Content-Type\").includes(\"application/hal+json\");"
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [
@@ -92,7 +105,12 @@
 			"name": "/repositories/1",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
 				"body": {},
 				"url": {
 					"raw": "http://localhost:64151/repositories/1",
@@ -118,6 +136,10 @@
 					{
 						"key": "Authorization",
 						"value": "Admin"
+					},
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
 					}
 				],
 				"body": {},
@@ -145,6 +167,10 @@
 					{
 						"key": "Authorization",
 						"value": "Contributor"
+					},
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
 					}
 				],
 				"body": {},
@@ -172,6 +198,10 @@
 					{
 						"key": "Content-Type",
 						"value": "application/json"
+					},
+					{
+						"key": "Accep",
+						"value": "application/hal+json"
 					}
 				],
 				"body": {
